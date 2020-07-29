@@ -1,5 +1,7 @@
 sudo: required
-language: generic
+cache:
+  directories:
+    - node_modules
 services:
   - docker
 before_install:
@@ -10,7 +12,7 @@ deploy:
   provider: elasticbeanstalk
   region: 'us-east-2'
   app: 'docker-react'
-  env: 'DockerReacts-env'
+  env: 'DockerReact-env'
   bucket_name: 'elasticbeanstalk-us-east-2-737637823476'
   bucket_path: 'docker-react'
   on:
