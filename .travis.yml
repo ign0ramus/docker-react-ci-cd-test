@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t ign0ramus/docker-react-ci-cd-test -f Dockerfile.dev .
+script:
+  - docker run -e CI=true ign0ramus/docker-react-ci-cd-test npm run test
